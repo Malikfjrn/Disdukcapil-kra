@@ -273,8 +273,8 @@
                 <label for="formPelapor">Form Pelapor</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="formPelapor" name="formPelapor" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="formPelapor" name="formPelapor" type="file" required>
+                    <?= form_error('formPelapor', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>
@@ -284,8 +284,8 @@
                 <label for="suratKelahiran">Surat Keterangan</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="suratKelahiran" name="suratKelahiran" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="suratKelahiran" name="suratKelahiran" type="file" required>
+                    <?= form_error('suratKelahiran', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>
@@ -295,8 +295,8 @@
                 <label for="kutipanAkta">Kutipan Akta</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="kutipanAkta" name="kutipanAkta" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="kutipanAkta" name="kutipanAkta" type="file" required>
+                    <?= form_error('kutipanAkta', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>
@@ -306,8 +306,8 @@
                 <label for="KKortu">Kartu Keluarga Orang Tua</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="KKortu" name="KKortu" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="KKortu" name="KKortu" type="file" required>
+                    <?= form_error('KKortu', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>
@@ -317,8 +317,8 @@
                 <label for="KTPortu">KTP Orang Tua</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="KTPortu" name="KTPortu" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="KTPortu" name="KTPortu" type="file" required>
+                    <?= form_error('KTPortu', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>
@@ -328,8 +328,8 @@
                 <label for="KTPpelapor">KTP Pelapor</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="KTPpelapor" name="KTPpelapor" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="KTPpelapor" name="KTPpelapor" type="file" required>
+                    <?= form_error('KTPpelapor', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>
@@ -339,8 +339,8 @@
                 <label for="KTPsaksi">KTP Saksi</label>
                 <div class="kv-avatar">
                   <div class="file">
-                    <input id="KTPsaksi" name="KTPsaksi" type="file">
-                    <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                  <input id="KTPsaksi" name="KTPsaksi" type="file" required>
+                    <?= form_error('KTPsaksi', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
               </div>

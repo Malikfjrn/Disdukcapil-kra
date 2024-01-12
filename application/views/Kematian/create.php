@@ -222,8 +222,8 @@
                   <label for="formPelapor">Form</label>
                   <div class="kv-avatar">
                     <div class="file">
-                      <input id="formPelapor" name="formPelapor" type="file">
-                      <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                    <input id="formPelapor" name="formPelapor" type="file" required>
+                      <?= form_error('formPelapor', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
                 </div>
@@ -233,8 +233,8 @@
                   <label for="suratKet">Surat Keterangan</label>
                   <div class="kv-avatar">
                     <div class="file">
-                      <input id="suratKet" name="suratKet" type="file">
-                      <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                    <input id="suratKet" name="suratKet" type="file" required>
+                      <?= form_error('suratKet', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
                 </div>
@@ -244,8 +244,8 @@
                   <label for="KKjenazah">KK Jenazah</label>
                   <div class="kv-avatar">
                     <div class="file">
-                      <input id="KKjenazah" name="KKjenazah" type="file">
-                      <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                    <input id="KKjenazah" name="KKjenazah" type="file" required>
+                      <?= form_error('KKjenazah', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
                   </div>
@@ -255,8 +255,8 @@
                   <label for="KTPjenazah">KTP Jenazah</label>
                   <div class="kv-avatar">
                     <div class="file">
-                      <input id="KTPjenazah" name="KTPjenazah" type="file">
-                      <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                    <input id="KTPjenazah" name="KTPjenazah" type="file" required>
+                      <?= form_error('KTPjenazah', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
                   </div>
@@ -266,8 +266,8 @@
                   <label for="KTPpelapor">KTP Pelapor</label>
                   <div class="kv-avatar">
                     <div class="file">
-                      <input id="KTPpelapor" name="KTPpelapor" type="file">
-                      <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                    <input id="KTPpelapor" name="KTPpelapor" type="file" required>
+                      <?= form_error('KTPpelapor', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
                   </div>
@@ -277,8 +277,8 @@
                   <label for="KTPsaksi">KTP Saksi</label>
                   <div class="kv-avatar">
                     <div class="file">
-                      <input id="KTPsaksi" name="KTPsaksi" type="file">
-                      <?= form_error('upload_file', '<span class="text-danger">', '</span>'); ?>
+                    <input id="KTPsaksi" name="KTPsaksi" type="file" required>
+                      <?= form_error('KTPsaksi', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
                 </div>
