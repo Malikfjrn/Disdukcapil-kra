@@ -52,6 +52,14 @@ class Model_pensiun extends CI_Model
         return $query->num_rows();
     }
 
+	public function countTotalPensiunPertahun()
+{
+    $currentYear = date('Y');
+    $sql = "SELECT * FROM tbl_pensiun WHERE YEAR(tahun_pensiun) = ?";
+    $query = $this->db->query($sql, array($currentYear));
+    return $query->num_rows();
+}
+
 	public function countTotalPensiunPerMonthCurrentYear()
 	{
 		$currentYear = date('Y');

@@ -103,7 +103,7 @@ class Kelahiran extends Admin_Controller
 			'required' => 'Kolom Berat Bayi harus diisi.',));
 		$this->form_validation->set_rules('panjangBayi', 'Panjang Bayi', 'trim|required', array(
 			'required' => 'Kolom Panjang Bayi harus diisi.',));
-		 $this->form_validation->set_rules('upload_file', 'Upload File', 'required');
+		//  $this->form_validation->set_rules('upload_file', 'Upload File', 'required');
 		
 
 

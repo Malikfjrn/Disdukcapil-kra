@@ -33,15 +33,6 @@ class Dashboard extends Admin_Controller
 		$this->data['total_perceraian'] = $this->model_perceraian->countTotalPerceraian();
 		$this->data['total_perceraianislam'] = $this->model_perceraianislam->countTotalPerceraianislam();
 		$this->data['total_users'] = $this->model_users->countTotalUsers();
-		$this->data['labels'] = $this->Model_kelahiran->getBulanLabels();
-    	$this->data['datasets'] = $this->Model_kelahiran->getDatasetsForPackages();
-		// $this->data['total_kelahiran_per_bulan'] = $this->Model_kelahiran->countTotalKelahiranPerBulan();
-		$this->data['total_kelahiran_per_bulan'] = $this->Model_kelahiran->countTotalKelahiranPerBulanCurrentYear();
-		$this->data['total_kematian_per_bulan'] = $this->Model_kematian->countTotalKematianPerBulanCurrentYear();
-		$this->data['total_nikah_per_month'] = $this->model_nikah->countTotalNikahPerMonthCurrentYear();
-		$this->data['total_pensiun_per_month'] = $this->model_pensiun->countTotalPensiunPerMonthCurrentYear();
-		$this->data['total_perceraian_per_month'] = $this->model_perceraian->countTotalPerceraianPerMonthCurrentYear();
-		$this->data['total_perceraianislam_per_month'] = $this->model_perceraianislam->countTotalPerceraianislamPerMonthCurrentYear();
 		
 
 		

@@ -130,12 +130,20 @@
                         <td> - </td>
                       </tr>
                       <tr>
+                        <td>Grafik</td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewGrafik"></td>
+                        <td> - </td>
+                      </tr>
+                      <tr>
                         <td>Setting</td>
                         <td> - </td>
                         <td><input type="checkbox" name="permission[]" id="permission" value="updateSetting"></td>
                         <td> - </td>
                         <td> - </td>
                       </tr>
+                    
                     </tbody>
                   </table>
                   

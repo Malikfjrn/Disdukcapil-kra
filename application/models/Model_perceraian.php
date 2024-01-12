@@ -52,6 +52,16 @@ class Model_perceraian extends CI_Model
 		return $query->num_rows();
 	}
 
+	public function countTotalPerceraianPertahun()
+{
+    $currentYear = date('Y');
+    $sql = "SELECT * FROM tbl_perceraian WHERE YEAR(tanggal_putusan) = ?";
+    $query = $this->db->query($sql, array($currentYear));
+    return $query->num_rows();
+}
+
+
+
 	public function countTotalPerceraianPerMonthCurrentYear()
 {
     $currentYear = date('Y');

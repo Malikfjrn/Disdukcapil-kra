@@ -52,6 +52,14 @@ class Model_nikah extends CI_Model
 		return $query->num_rows();
 	}
 
+	public function countTotalNikahPertahun()
+{
+    $currentYear = date('Y');
+    $sql = "SELECT * FROM tbl_nikah WHERE YEAR(tanggalNikah) = ?";
+    $query = $this->db->query($sql, array($currentYear));
+    return $query->num_rows();
+}
+
 	public function countTotalNikahPerMonthCurrentYear()
 {
     $currentYear = date('Y');

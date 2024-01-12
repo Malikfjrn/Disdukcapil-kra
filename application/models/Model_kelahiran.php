@@ -51,6 +51,15 @@ class Model_kelahiran extends CI_Model
 		$query = $this->db->query($sql);
 		return $query->num_rows();
 	}
+
+	public function countTotalKelahiranPertahun()
+	{
+		$currentYear = date('Y');
+		$sql = "SELECT * FROM kelahiran WHERE YEAR(tanggalLahir) = ?";
+		$query = $this->db->query($sql, array($currentYear));
+		return $query->num_rows();
+	}
+	
 	
 	public function countTotalKelahiranPerBulanCurrentYear()
 	{
@@ -59,7 +68,7 @@ class Model_kelahiran extends CI_Model
 		$sql = "SELECT MONTH(tanggalLahir) as bulan, COUNT(*) as total_kelahiran 
 				FROM kelahiran 
 				WHERE YEAR(tanggalLahir) = ?
-				GROUP BY bulan";
+				GROUP BY MONTH(tanggalLahir)";
 	
 		$query = $this->db->query($sql, array($currentYear));
 		return $query->result_array();
@@ -67,71 +76,78 @@ class Model_kelahiran extends CI_Model
 	
 	
 	public function getBulanLabels()
-	{	
-		$currentYear = date('Y'); 
+{
+    $currentYear = date('Y'); // Get the current year
 
-		$this->db->select('DISTINCT YEAR(tanggalLahir) as tahun, MONTH(tanggalLahir) as bulan', false);
+    $this->db->select('DISTINCT MONTH(tanggalLahir) as bulan', false);
+    $this->db->from('kelahiran');
+    $this->db->where('YEAR(tanggalLahir)', $currentYear); // Filter by the current year
+    $query = $this->db->get();
+    $result = $query->result_array();
+
+    // Pass $currentYear explicitly to array_map
+    $labels = array_map(function ($item) use ($currentYear) {
+        // Menggunakan fungsi date untuk mendapatkan nama bulan dari nomor bulan
+        $nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
+        return ['tahun' => $currentYear, 'bulan' => $nama_bulan];
+    }, $result);
+
+    return $labels;
+}
+
+
+	  
+	
+	// Fungsi-fungsi lain di model juga harus diperbarui sesuai dengan kebutuhan
+	
+	
+	
+	public function getDatasetsForPackages()
+	{
+		$this->db->select('jenisKelamin, COUNT(*) as jumlah_pesanan');
 		$this->db->from('kelahiran');
-		$this->db->where('YEAR(tanggalLahir)', $currentYear); 
+		$this->db->where('YEAR(tanggalLahir)', date('Y')); // Filter by the current year
+		$this->db->group_by('jenisKelamin');
+		$this->db->order_by('jenisKelamin', 'ASC');
 		$query = $this->db->get();
 		$result = $query->result_array();
 	
-		$labels = array_map(function ($item)  use ($currentYear) {
-			
-			$nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
-			return ['tahun' => $item['tahun'], 'bulan' => $nama_bulan];
+		$datasets = array_map(function($item) {
+			return [
+				'label' => $item['jenisKelamin'],
+				'data' => $this->getJumlahPesananPerBulan($item['jenisKelamin']),
+				'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
+				'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
+				'borderWidth' => 1
+			];
 		}, $result);
 	
-		return $labels;
+		return $datasets;
 	}
-	  
 	
-	
-	
-	
-	
-		public function getDatasetsForPackages()
-		{
-			$this->db->select('jenisKelamin, COUNT(*) as jumlah_pesanan');
-			$this->db->from('kelahiran');
-			$this->db->group_by('jenisKelamin');
-			$this->db->order_by('jenisKelamin', 'ASC');
-			$query = $this->db->get();
-			$result = $query->result_array();
-	
-			$datasets = array_map(function($item) {
-				return [
-					'label' => $item['jenisKelamin'],
-					'data' => $this->getJumlahPesananPerBulan($item['jenisKelamin']),
-					'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
-					'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
-					'borderWidth' => 1
-				];
-			}, $result);
-	
-			return $datasets;
-		}
-	
-		public function getJumlahPesananPerBulan($jenisKelamin)
+	public function getJumlahPesananPerBulan($jenisKelamin)
 	{
 		$this->db->select('MONTH(tanggalLahir) as bulan, COUNT(*) as jumlah_pesanan');
 		$this->db->from('kelahiran');
 		$this->db->where('jenisKelamin', $jenisKelamin);
+		$this->db->where('YEAR(tanggalLahir)', date('Y')); // Filter by the current year
 		$this->db->group_by('bulan');
 		$query = $this->db->get();
 		$result = $query->result_array();
 	
-		
+		// Inisialisasi array jumlah_pesanan
 		$jumlah_pesanan = array_fill(1, 12, 0);
 	
-		
+		// Isi array dengan data yang benar
 		foreach ($result as $item) {
 			$bulan = $item['bulan'];
 			$jumlah_pesanan[$bulan] = $item['jumlah_pesanan'];
 		}
 	
+		// Tambahkan output log untuk memeriksa hasil
 		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $jenisKelamin . '): ' . print_r($jumlah_pesanan, true));
 	
 		return $jumlah_pesanan;
 	}
+	
 }

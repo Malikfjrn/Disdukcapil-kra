@@ -52,6 +52,14 @@ class Model_kematian extends CI_Model
 		return $query->num_rows();
 	}
 
+	public function countTotalKematianPertahun()
+{
+    $currentYear = date('Y');
+    $sql = "SELECT * FROM kematian WHERE YEAR(tanggalKematian) = ?";
+    $query = $this->db->query($sql, array($currentYear));
+    return $query->num_rows();
+}
+
 	public function countTotalKematianPerBulanCurrentYear()
 	{
 		$currentYear = date('Y');
@@ -65,15 +73,20 @@ class Model_kematian extends CI_Model
 		return $query->result_array();
 	}
 
+	
+
 	public function getBulanLabels()
-	{
+	{	
+		$currentYear = date('Y'); 
+
 		$this->db->select('DISTINCT YEAR(tanggalKematian) as tahun, MONTH(tanggalKematian) as bulan', false);
 		$this->db->from('kematian');
+		$this->db->where('YEAR(tanggalKematian)', $currentYear); 
 		$query = $this->db->get();
 		$result = $query->result_array();
 	
-		$labels = array_map(function ($item) {
-			// Menggunakan fungsi date untuk mendapatkan nama bulan dari nomor bulan
+		$labels = array_map(function ($item)  use ($currentYear) {
+			
 			$nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
 			return ['tahun' => $item['tahun'], 'bulan' => $nama_bulan];
 		}, $result);
@@ -82,7 +95,7 @@ class Model_kematian extends CI_Model
 	}
 	  
 	
-	// Fungsi-fungsi lain di model juga harus diperbarui sesuai dengan kebutuhan
+	
 	
 	
 	
@@ -90,6 +103,7 @@ class Model_kematian extends CI_Model
 		{
 			$this->db->select('sebab, COUNT(*) as jumlah_pesanan');
 			$this->db->from('kematian');
+			$this->db->where('YEAR(tanggalKematian)', date('Y'));
 			$this->db->group_by('sebab');
 			$this->db->order_by('sebab', 'ASC');
 			$query = $this->db->get();
@@ -110,25 +124,25 @@ class Model_kematian extends CI_Model
 	
 		public function getJumlahPesananPerBulan($sebab)
 	{
-		$this->db->select('MONTH(tanggalKematian) as bulan, COUNT(*) as jumlah_pesanan');
+		$this->db->select('MONTH(sebab) as bulan, COUNT(*) as jumlah_pesanan');
 		$this->db->from('kematian');
 		$this->db->where('sebab', $sebab);
 		$this->db->group_by('bulan');
 		$query = $this->db->get();
 		$result = $query->result_array();
 	
-		// Inisialisasi array jumlah_pesanan
+		
 		$jumlah_pesanan = array_fill(1, 12, 0);
 	
-		// Isi array dengan data yang benar
+		
 		foreach ($result as $item) {
 			$bulan = $item['bulan'];
 			$jumlah_pesanan[$bulan] = $item['jumlah_pesanan'];
 		}
 	
-		// Tambahkan output log untuk memeriksa hasil
 		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $sebab . '): ' . print_r($jumlah_pesanan, true));
 	
 		return $jumlah_pesanan;
 	}
 }
+

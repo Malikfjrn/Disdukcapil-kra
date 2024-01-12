@@ -263,6 +263,17 @@
                         <td> - </td>
                       </tr>
                       <tr>
+                        <td>Grafik</td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td><input type="checkbox" name="permission[]" id="permission" value="viewGrafik" <?php 
+                        if($serialize_permission) {
+                          if(in_array('viewGrafik', $serialize_permission)) { echo "checked"; }  
+                        }
+                         ?>></td>
+                        <td> - </td>
+                      </tr>
+                      <tr>
                         <td>Setting</td>
                         <td> - </td>
                         <td><input type="checkbox" name="permission[]" id="permission" value="updateSetting" <?php 

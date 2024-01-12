@@ -52,6 +52,14 @@ class Model_perceraianislam extends CI_Model
 		return $query->num_rows();
 	}
 
+	public function countTotalPerceraianislamPertahun()
+{
+    $currentYear = date('Y');
+    $sql = "SELECT * FROM tbl_perceraianislam WHERE YEAR(tanggal_perceraianislam) = ?";
+    $query = $this->db->query($sql, array($currentYear));
+    return $query->num_rows();
+}
+
 	public function countTotalPerceraianislamPerMonthCurrentYear()
 	{
 		$currentYear = date('Y');
