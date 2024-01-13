@@ -51,24 +51,37 @@ class Nikah extends Admin_Controller
 			'min_length' => 'NIK Pria harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Pria tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('nama_lengkap_pria', 'Nama Lengkap Pria', 'trim|required');
-        $this->form_validation->set_rules('provinsi_pria', 'Provinsi Pria', 'required');
-        $this->form_validation->set_rules('kabupaten_pria', 'Kabupaten Pria', 'trim|required');
-        $this->form_validation->set_rules('kecamatan_pria', 'Kecamatan Pria', 'required');
-        $this->form_validation->set_rules('desa_pria', 'Desa Pria', 'trim|required');
+		$this->form_validation->set_rules('nama_lengkap_pria', 'Nama Lengkap Pria', 'trim|required', array(
+			'required' => 'Kolom Nama Lengkap Pria harus diisi.',));
+        $this->form_validation->set_rules('provinsi_pria', 'Provinsi Pria', 'trim|required', array(
+			'required' => 'Kolom Provinsi Pria harus diisi.',));
+        $this->form_validation->set_rules('kabupaten_pria', 'Kabupaten Pria', 'trim|required', array(
+			'required' => 'Kolom Kabupaten Pria harus diisi.',));
+        $this->form_validation->set_rules('kecamatan_pria', 'Kecamatan Pria','trim|required', array(
+			'required' => 'Kolom Kecamatan Pria harus diisi.',));
+        $this->form_validation->set_rules('desa_pria', 'Desa Pria', 'trim|required', array(
+			'required' => 'Kolom Desa Pria harus diisi.',));
 		$this->form_validation->set_rules('nik_wanita', 'Nik Wanita', 'required|min_length[16]|max_length[17]', array(
 			'required' => 'Kolom NIK Wanita harus diisi.',
 			'min_length' => 'NIK Wanita harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Wanita tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('nama_lengkap_wanita', 'Nama Lengkap Wanita', 'trim|required');
-		$this->form_validation->set_rules('provinsi_wanita', 'Provinsi Wanita', 'trim|required');
-		$this->form_validation->set_rules('kecamatan_wanita', 'Kecamatan Wanita', 'trim|required');
-		$this->form_validation->set_rules('kabupaten_wanita', 'Kabupaten Wanita', 'trim|required');
-        $this->form_validation->set_rules('desa_wanita', 'Desa Wanita', 'trim|required');
-		$this->form_validation->set_rules('no_nikah', 'No Nikah', 'trim|required');
-        $this->form_validation->set_rules('tanggalNikah', 'Tanggal Nikah', 'trim|required');
-        $this->form_validation->set_rules('alamat_baru', 'Alamat Baru', 'trim|required');
+		$this->form_validation->set_rules('nama_lengkap_wanita', 'Nama Lengkap Wanita', 'trim|required', array(
+			'required' => 'Kolom Nama Lengkap Wanita harus diisi.',));
+		$this->form_validation->set_rules('provinsi_wanita', 'Provinsi Wanita', 'trim|required', array(
+			'required' => 'Kolom Provinsi Wanita harus diisi.',));
+		$this->form_validation->set_rules('kecamatan_wanita', 'Kecamatan Wanita', 'trim|required', array(
+			'required' => 'Kolom Kecamatan Wanita harus diisi.',));
+		$this->form_validation->set_rules('kabupaten_wanita', 'Kabupaten Wanita', 'trim|required', array(
+			'required' => 'Kolom Kabupaten Wanita harus diisi.',));
+        $this->form_validation->set_rules('desa_wanita', 'Desa Wanita', 'trim|required', array(
+			'required' => 'Kolom Desa Wanita harus diisi.',));
+		$this->form_validation->set_rules('no_nikah', 'No Nikah', 'trim|required', array(
+			'required' => 'Kolom No Nikah harus diisi.',));
+        $this->form_validation->set_rules('tanggalNikah', 'Tanggal Nikah', 'trim|required', array(
+			'required' => 'Kolom Tanggal Nikah harus diisi.',));
+        $this->form_validation->set_rules('alamat_baru', 'Alamat Baru', 'trim|required', array(
+			'required' => 'Kolom Alamat Baru harus diisi.',));
         
 
         if ($this->form_validation->run() == TRUE) {

@@ -58,32 +58,43 @@ class Kematian extends Admin_Controller
 			'min_length' => 'NIK Ayah harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Ayah tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('namaAyah', 'Nama Ayah', 'trim|required');
+		$this->form_validation->set_rules('namaAyah', 'Nama Ayah', 'trim|required', array(
+			'required' => 'Kolom Nama Ayah harus diisi.',));
 		$this->form_validation->set_rules('nikSaksiSatu', 'NIK Saksi 1', 'required|min_length[16]|max_length[17]', array(
 			'required' => 'Kolom NIK Saksi 1 harus diisi.',
 			'min_length' => 'NIK Saksi 1 harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Saksi 1 tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('namaSaksiSatu', 'Nama Saksi 1', 'trim|required');
+		$this->form_validation->set_rules('namaSaksiSatu', 'Nama Saksi 1', 'trim|required', array(
+			'required' => 'Kolom Nama Saksi 1 harus diisi.',));
 		$this->form_validation->set_rules('nikSaksiDua', 'NIK Saksi 2', 'required|min_length[16]|max_length[17]', array(
 			'required' => 'Kolom NIK Saksi 2 harus diisi.',
 			'min_length' => 'NIK Saksi 2 harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Saksi 2 tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('namaSaksiDua', 'Nama Saksi 2', 'trim|required');
+		$this->form_validation->set_rules('namaSaksiDua', 'Nama Saksi 2', 'trim|required', array(
+			'required' => 'Kolom Nama Saksi 2 harus diisi.',));
 		$this->form_validation->set_rules('nikJenazah', 'NIK Jenazah', 'required|min_length[16]|max_length[17]', array(
 			'required' => 'Kolom NIK Jenazah harus diisi.',
 			'min_length' => 'NIK Jenazah harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Jenazah tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('namaJenazah', 'Nama Jenazah', 'trim|required');
-		$this->form_validation->set_rules('tanggalKematian', 'Tanggal Kematian', 'trim|required');
-		$this->form_validation->set_rules('waktuKematian', 'Waktu Kematian', 'trim|required');
-		$this->form_validation->set_rules('tempat', 'Tampat Kematian', 'trim|required');
-		$this->form_validation->set_rules('sebab', 'Sebab Kematian', 'trim|required');
-		$this->form_validation->set_rules('yangMenerangkan', 'Yang Menerangkan', 'trim|required');
-		$this->form_validation->set_rules('noKK', 'Nomor KK Jenazah', 'trim|required');
-		$this->form_validation->set_rules('namaKepala', 'Kepala Keluarga Jenazah', 'trim|required');
+		$this->form_validation->set_rules('namaJenazah', 'Nama Jenazah', 'trim|required', array(
+			'required' => 'Kolom Nama Jenazah harus diisi.',));
+		$this->form_validation->set_rules('tanggalKematian', 'Tanggal Kematian', 'trim|required', array(
+			'required' => 'Kolom Tanggal Kemataian harus diisi.',));
+		$this->form_validation->set_rules('waktuKematian', 'Waktu Kematian', 'trim|required', array(
+			'required' => 'Kolom Waktu Kematian harus diisi.',));
+		$this->form_validation->set_rules('tempat', 'Tampat Kematian', 'trim|required', array(
+			'required' => 'Kolom Tempat Kematian harus diisi.',));
+		$this->form_validation->set_rules('sebab', 'Sebab Kematian', 'trim|required', array(
+			'required' => 'Kolom Sebab Kematian harus diisi.',));
+		$this->form_validation->set_rules('yangMenerangkan', 'Yang Menerangkan', 'trim|required', array(
+			'required' => 'Kolom Yang Menerangkan harus diisi.',));
+		$this->form_validation->set_rules('noKK', 'Nomor KK Jenazah', 'trim|required', array(
+			'required' => 'Kolom Nomor KK Jenazah harus diisi.',));
+		$this->form_validation->set_rules('namaKepala', 'Kepala Keluarga Jenazah', 'trim|required', array(
+			'required' => 'Kolom Kepala Keluarga Jenazah harus diisi.',));
 		
 
 

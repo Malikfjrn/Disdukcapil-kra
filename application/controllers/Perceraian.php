@@ -49,25 +49,34 @@ class Perceraian extends Admin_Controller
 			'min_length' => 'NIK Petugas harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Petugas tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('nama_petugas', 'Nama Petugas', 'trim|required');
+		$this->form_validation->set_rules('nama_petugas', 'Nama Petugas','trim|required', array(
+			'required' => 'Kolom Nama Petugas harus diisi.',));
 		$this->form_validation->set_rules('nik_suami', 'Nik Suami', 'required|min_length[16]|max_length[17]', array(
 			'required' => 'Kolom NIK Suami harus diisi.',
 			'min_length' => 'NIK Suami harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Suami tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('nama_suami', 'Nama Suami', 'trim|required');
+		$this->form_validation->set_rules('nama_suami', 'Nama Suami', 'trim|required', array(
+			'required' => 'Kolom Nama Suami harus diisi.',));
 		$this->form_validation->set_rules('nik_istri', 'Nik Istri', 'required|min_length[16]|max_length[17]', array(
 			'required' => 'Kolom NIK Istri harus diisi.',
 			'min_length' => 'NIK Istri harus memiliki setidaknya 16 karakter.',
 			'max_length' => 'NIK Istri tidak boleh lebih dari 17 karakter.'
 		));
-		$this->form_validation->set_rules('nama_istri', 'Nama Istri', 'trim|required');
-		$this->form_validation->set_rules('mengajukan', 'Yang Mengajukan', 'trim|required');
-		$this->form_validation->set_rules('no_akta', 'No. Akta Kawin', 'trim|required');
-		$this->form_validation->set_rules('tanggal_akta', 'Tanggal Akta Kawin', 'trim|required');
-		$this->form_validation->set_rules('no_putusan', 'No. Putusan Pengadilan', 'trim|required');
-		$this->form_validation->set_rules('tanggal_putusan', 'Tanggal Putusan Pengadilan', 'trim|required');
-		$this->form_validation->set_rules('sebab', 'Sebab Perceraian', 'trim|required');
+		$this->form_validation->set_rules('nama_istri', 'Nama Istri', 'trim|required', array(
+			'required' => 'Kolom Nama Istri harus diisi.',));
+		$this->form_validation->set_rules('mengajukan', 'Yang Mengajukan', 'trim|required', array(
+			'required' => 'Kolom Yang Mengajukan harus diisi.',));
+		$this->form_validation->set_rules('no_akta', 'No. Akta Kawin', 'trim|required', array(
+			'required' => 'Kolom No Akta Kawin harus diisi.',));
+		$this->form_validation->set_rules('tanggal_akta', 'Tanggal Akta Kawin', 'trim|required', array(
+			'required' => 'Kolom Tanggal Akta Kawin harus diisi.',));
+		$this->form_validation->set_rules('no_putusan', 'No. Putusan Pengadilan', 'trim|required', array(
+			'required' => 'Kolom No Putusan Pengadilan harus diisi.',));
+		$this->form_validation->set_rules('tanggal_putusan', 'Tanggal Putusan Pengadilan', 'trim|required', array(
+			'required' => 'Kolom Tanggal Putusan Pengadilan harus diisi.',));
+		$this->form_validation->set_rules('sebab', 'Sebab Perceraian', 'trim|required', array(
+			'required' => 'Kolom Sebab Perceraian harus diisi.',));
 		
 
 

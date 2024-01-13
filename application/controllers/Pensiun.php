@@ -44,7 +44,8 @@ class Pensiun extends Admin_Controller
 			redirect('dashboard', 'refresh');
 		}
 
-		$this->form_validation->set_rules('tahun_pensiun', 'Tahun Pensiun', 'required');
+		$this->form_validation->set_rules('tahun_pensiun', 'Tahun Pensiun', 'trim|required', array(
+			'required' => 'Kolom Tahun Pensiun harus diisi.',));
 		$this->form_validation->set_rules('upload_file', 'Upload File', 'callback_upload_check');
 
 		if ($this->form_validation->run() == TRUE) {
