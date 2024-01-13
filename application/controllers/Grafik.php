@@ -9,7 +9,6 @@ class Grafik extends Admin_Controller
 
 
 		$this->data['page_title'] = 'Grafik';
-        // $this->load->model('Model_grafik');
         $this->load->model('Model_kelahiran');
         $this->load->model('Model_kematian');
         $this->load->model('Model_nikah');

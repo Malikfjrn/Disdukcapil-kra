@@ -128,14 +128,13 @@ class Nikah extends Admin_Controller
 
 	public function upload_image()
     {
-    	// assets/images/product_image
+    	
         $config['upload_path'] = 'assets/images/nikah';
         $config['file_name'] =  uniqid();
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '1000';
 
-        // $config['max_width']  = '1024';s
-        // $config['max_height']  = '768';
+        
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('nikah'))
@@ -243,8 +242,5 @@ class Nikah extends Admin_Controller
 			}
 		}
 	}
-
-	
-
 
 }       

@@ -267,7 +267,7 @@ class Users extends Admin_Controller
 
 		if ($id) {
 			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]');
-			// Remove the max_length rule for the username
+			
 
 			$this->form_validation->set_rules('email', 'Email', 'trim|required');
 			$this->form_validation->set_rules('fname', 'First name', 'trim|required');

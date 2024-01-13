@@ -87,14 +87,14 @@ class Model_perceraianislam extends CI_Model
 			$totalData[$item['bulan']] = $item['total_perceraianislam'];
 		}
 
-		// Fill in missing months with 0
+		
 		for ($i = 1; $i <= 12; $i++) {
 			if (!isset($totalData[$i])) {
 				$totalData[$i] = 0;
 			}
 		}
 
-		ksort($totalData); // Sort by month
+		ksort($totalData); 
 
 		return $totalData;
 	}
@@ -102,7 +102,7 @@ class Model_perceraianislam extends CI_Model
 
 	public function getBulanLabels($tahun)
 	{
-		// Initialize an array with all months
+		
 		$allMonths = range(1, 12);
 
 		$this->db->select('MONTH(tanggal_perceraianislam) as bulan', false);
@@ -111,16 +111,16 @@ class Model_perceraianislam extends CI_Model
 		$query = $this->db->get();
 		$result = $query->result_array();
 
-		// Extract the months from the query result
+		
 		$existingMonths = array_column($result, 'bulan');
 
-		// Get the unique months
+		
 		$uniqueMonths = array_unique($existingMonths);
 
-		// Merge the existing months with all months to ensure all are included
+		
 		$allMonths = array_merge($allMonths, $uniqueMonths);
 
-		// Remove duplicates and sort the months
+		
 		$allMonths = array_unique($allMonths);
 		sort($allMonths);
 

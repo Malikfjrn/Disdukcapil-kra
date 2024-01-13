@@ -18,7 +18,7 @@ class Dashboard extends Admin_Controller
 		$this->load->model('model_perceraian');
 		$this->load->model('model_perceraianislam');
 		$this->load->model('model_users');
-		// $this->load->model('Model_grafik');
+		
         
 
 	}

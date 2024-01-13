@@ -12,9 +12,7 @@ class Perceraianislam extends Admin_Controller
 		
 
 		$this->load->model('model_perceraianislam');
-		/*$this->load->model('model_fakultas');
-		$this->load->model('model_jurusan');
-		$this->load->model('model_kelas');*/
+		
 		
 		
 	}
@@ -33,14 +31,7 @@ class Perceraianislam extends Admin_Controller
 
 			$result[$k]['pcri_info'] = $v;
 
-			/*$fakultas = $this->model_mahasiswa->getFakultasData($v['id']);
-			$result[$k]['mhs_fakultas'] = $fakultas;
-
-			$jurusan = $this->model_mahasiswa->getJurusanData($v['id']);
-			$result[$k]['mhs_jurusan'] = $jurusan;
-
-			$kelas = $this->model_mahasiswa->getKelasData($v['id']);
-			$result[$k]['mhs_kelas'] = $kelas;*/
+			
 		}
 
 		$this->data['pcri_data'] = $result;
@@ -116,10 +107,7 @@ class Perceraianislam extends Admin_Controller
         	}
         }
         else {
-            // false case
-            // $this->data['fakultas'] = $this->model_fakultas->getFakultasData();
-            // $this->data['jurusan'] = $this->model_jurusan->getJurusanData();
-            // $this->data['kelas'] = $this->model_kelas->getKelasData();
+            
       
             $this->render_template('perceraianislam/create', $this->data);
         }	
@@ -139,14 +127,13 @@ class Perceraianislam extends Admin_Controller
 
 	public function upload_image()
     {
-    	// assets/images/product_image
+    	
         $config['upload_path'] = 'assets/images/perceraianislam';
         $config['file_name'] =  uniqid();
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '1000';
 
-        // $config['max_width']  = '1024';s
-        // $config['max_height']  = '768';
+        
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('perceraianislam'))

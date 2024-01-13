@@ -12,9 +12,7 @@ class Pensiun extends Admin_Controller
 
 
 		$this->load->model('model_pensiun');
-		/*$this->load->model('model_fakultas');
-		$this->load->model('model_jurusan');
-		$this->load->model('model_kelas');*/
+		
 	}
 
 	public function index()
@@ -95,14 +93,13 @@ class Pensiun extends Admin_Controller
 
 	public function upload_image()
 	{
-		// assets/images/product_image
+		
 		$config['upload_path'] = 'assets/images/pensiun';
 		$config['file_name'] =  uniqid();
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = '10000';
 
-		// $config['max_width']  = e '1024';s
-		// $config['max_height']  = '768';
+		
 
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('upload_file')) {

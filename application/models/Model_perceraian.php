@@ -105,7 +105,7 @@ class Model_perceraian extends CI_Model
 	
 	public function getDatasetsForPackages()
 	{
-		$this->db->select('sebab, COUNT(*) as jumlah_pesanan');
+		$this->db->select('sebab, COUNT(*) as jumlah_perceraian');
 		$this->db->from('tbl_perceraian');
 		$this->db->where('YEAR(tanggal_putusan)', date('Y')); // Filter by the current year
 		$this->db->group_by('sebab');
@@ -116,7 +116,7 @@ class Model_perceraian extends CI_Model
 		$datasets = array_map(function($item) {
 			return [
 				'label' => $item['sebab'],
-				'data' => $this->getJumlahPesananPerBulan($item['sebab']),
+				'data' => $this->getJumlahPerceraianPerBulan($item['sebab']),
 				'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
 				'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
 				'borderWidth' => 1
@@ -126,9 +126,9 @@ class Model_perceraian extends CI_Model
 		return $datasets;
 	}
 	
-	public function getJumlahPesananPerBulan($sebab)
+	public function getJumlahPerceraianPerBulan($sebab)
 	{
-		$this->db->select('MONTH(tanggal_putusan) as bulan, COUNT(*) as jumlah_pesanan');
+		$this->db->select('MONTH(tanggal_putusan) as bulan, COUNT(*) as jumlah_perceraian');
 		$this->db->from('tbl_perceraian');
 		$this->db->where('sebab', $sebab);
 		$this->db->where('YEAR(tanggal_putusan)', date('Y')); // Filter by the current year
@@ -136,19 +136,19 @@ class Model_perceraian extends CI_Model
 		$query = $this->db->get();
 		$result = $query->result_array();
 	
-		// Inisialisasi array jumlah_pesanan
-		$jumlah_pesanan = array_fill(1, 12, 0);
+		// Inisialisasi array jumlah_perceraian
+		$jumlah_perceraian = array_fill(1, 12, 0);
 	
 		// Isi array dengan data yang benar
 		foreach ($result as $item) {
 			$bulan = $item['bulan'];
-			$jumlah_pesanan[$bulan] = $item['jumlah_pesanan'];
+			$jumlah_perceraian[$bulan] = $item['jumlah_perceraian'];
 		}
 	
 		// Tambahkan output log untuk memeriksa hasil
-		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $sebab . '): ' . print_r($jumlah_pesanan, true));
+		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $sebab . '): ' . print_r($jumlah_perceraian, true));
 	
-		return $jumlah_pesanan;
+		return $jumlah_perceraian;
 	}
 	
 }

@@ -101,7 +101,7 @@ class Model_kematian extends CI_Model
 	
 		public function getDatasetsForPackages()
 		{
-			$this->db->select('sebab, COUNT(*) as jumlah_pesanan');
+			$this->db->select('sebab, COUNT(*) as jumlah_kelmatian');
 			$this->db->from('kematian');
 			$this->db->where('YEAR(tanggalKematian)', date('Y'));
 			$this->db->group_by('sebab');
@@ -112,7 +112,7 @@ class Model_kematian extends CI_Model
 			$datasets = array_map(function($item) {
 				return [
 					'label' => $item['sebab'],
-					'data' => $this->getJumlahPesananPerBulan($item['sebab']),
+					'data' => $this->getJumlahKematianPerBulan($item['sebab']),
 					'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
 					'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
 					'borderWidth' => 1
@@ -122,9 +122,9 @@ class Model_kematian extends CI_Model
 			return $datasets;
 		}
 	
-		public function getJumlahPesananPerBulan($sebab)
+		public function getJumlahKematianPerBulan($sebab)
 	{
-		$this->db->select('MONTH(sebab) as bulan, COUNT(*) as jumlah_pesanan');
+		$this->db->select('MONTH(sebab) as bulan, COUNT(*) as jumlah_kelmatian');
 		$this->db->from('kematian');
 		$this->db->where('sebab', $sebab);
 		$this->db->group_by('bulan');
@@ -132,17 +132,17 @@ class Model_kematian extends CI_Model
 		$result = $query->result_array();
 	
 		
-		$jumlah_pesanan = array_fill(1, 12, 0);
+		$jumlah_kelmatian = array_fill(1, 12, 0);
 	
 		
 		foreach ($result as $item) {
 			$bulan = $item['bulan'];
-			$jumlah_pesanan[$bulan] = $item['jumlah_pesanan'];
+			$jumlah_kelmatian[$bulan] = $item['jumlah_kelmatian'];
 		}
 	
-		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $sebab . '): ' . print_r($jumlah_pesanan, true));
+		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $sebab . '): ' . print_r($jumlah_kelmatian, true));
 	
-		return $jumlah_pesanan;
+		return $jumlah_kelmatian;
 	}
 }
 

@@ -68,7 +68,7 @@ class Perceraian extends Admin_Controller
 		$this->form_validation->set_rules('no_putusan', 'No. Putusan Pengadilan', 'trim|required');
 		$this->form_validation->set_rules('tanggal_putusan', 'Tanggal Putusan Pengadilan', 'trim|required');
 		$this->form_validation->set_rules('sebab', 'Sebab Perceraian', 'trim|required');
-		//  $this->form_validation->set_rules('upload_file', 'Upload File', 'callback_upload_check');
+		
 
 
 		if ($this->form_validation->run() == TRUE) {
@@ -307,8 +307,5 @@ class Perceraian extends Admin_Controller
 			}
 		}
 	}
-
-	
-
 	
 }

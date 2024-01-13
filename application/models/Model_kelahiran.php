@@ -76,37 +76,30 @@ class Model_kelahiran extends CI_Model
 	
 	
 	public function getBulanLabels()
-{
-    $currentYear = date('Y'); // Get the current year
+	{
+		$currentYear = date('Y'); 
 
-    $this->db->select('DISTINCT MONTH(tanggalLahir) as bulan', false);
-    $this->db->from('kelahiran');
-    $this->db->where('YEAR(tanggalLahir)', $currentYear); // Filter by the current year
-    $query = $this->db->get();
-    $result = $query->result_array();
+		$this->db->select('DISTINCT MONTH(tanggalLahir) as bulan', false);
+		$this->db->from('kelahiran');
+		$this->db->where('YEAR(tanggalLahir)', $currentYear); 
+		$query = $this->db->get();
+		$result = $query->result_array();
 
-    // Pass $currentYear explicitly to array_map
-    $labels = array_map(function ($item) use ($currentYear) {
-        // Menggunakan fungsi date untuk mendapatkan nama bulan dari nomor bulan
-        $nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
-        return ['tahun' => $currentYear, 'bulan' => $nama_bulan];
-    }, $result);
+		
+		$labels = array_map(function ($item) use ($currentYear) {
+			
+			$nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
+			return ['tahun' => $currentYear, 'bulan' => $nama_bulan];
+		}, $result);
 
-    return $labels;
-}
+		return $labels;
+	}
 
-
-	  
-	
-	// Fungsi-fungsi lain di model juga harus diperbarui sesuai dengan kebutuhan
-	
-	
-	
 	public function getDatasetsForPackages()
 	{
-		$this->db->select('jenisKelamin, COUNT(*) as jumlah_pesanan');
+		$this->db->select('jenisKelamin, COUNT(*) as jumlah_kelahiran');
 		$this->db->from('kelahiran');
-		$this->db->where('YEAR(tanggalLahir)', date('Y')); // Filter by the current year
+		$this->db->where('YEAR(tanggalLahir)', date('Y')); 
 		$this->db->group_by('jenisKelamin');
 		$this->db->order_by('jenisKelamin', 'ASC');
 		$query = $this->db->get();
@@ -115,7 +108,7 @@ class Model_kelahiran extends CI_Model
 		$datasets = array_map(function($item) {
 			return [
 				'label' => $item['jenisKelamin'],
-				'data' => $this->getJumlahPesananPerBulan($item['jenisKelamin']),
+				'data' => $this->getJumlahKelahiranPerBulan($item['jenisKelamin']),
 				'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
 				'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
 				'borderWidth' => 1
@@ -125,29 +118,29 @@ class Model_kelahiran extends CI_Model
 		return $datasets;
 	}
 	
-	public function getJumlahPesananPerBulan($jenisKelamin)
+	public function getJumlahKelahiranPerBulan($jenisKelamin)
 	{
-		$this->db->select('MONTH(tanggalLahir) as bulan, COUNT(*) as jumlah_pesanan');
+		$this->db->select('MONTH(tanggalLahir) as bulan, COUNT(*) as jumlah_kelahiran');
 		$this->db->from('kelahiran');
 		$this->db->where('jenisKelamin', $jenisKelamin);
-		$this->db->where('YEAR(tanggalLahir)', date('Y')); // Filter by the current year
+		$this->db->where('YEAR(tanggalLahir)', date('Y')); 
 		$this->db->group_by('bulan');
 		$query = $this->db->get();
 		$result = $query->result_array();
 	
-		// Inisialisasi array jumlah_pesanan
-		$jumlah_pesanan = array_fill(1, 12, 0);
+		
+		$jumlah_kelahiran = array_fill(1, 12, 0);
 	
-		// Isi array dengan data yang benar
+		
 		foreach ($result as $item) {
 			$bulan = $item['bulan'];
-			$jumlah_pesanan[$bulan] = $item['jumlah_pesanan'];
+			$jumlah_kelahiran[$bulan] = $item['jumlah_kelahiran'];
 		}
 	
-		// Tambahkan output log untuk memeriksa hasil
-		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $jenisKelamin . '): ' . print_r($jumlah_pesanan, true));
+		
+		log_message('debug', 'Jumlah Kelahiran Per Bulan (' . $jenisKelamin . '): ' . print_r($jumlah_kelahiran, true));
 	
-		return $jumlah_pesanan;
+		return $jumlah_kelahiran;
 	}
 	
 }
