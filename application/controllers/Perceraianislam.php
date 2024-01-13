@@ -225,12 +225,8 @@ class Perceraianislam extends Admin_Controller
         }
         else {
                     
-            // 	$this->data['fakultas'] = $this->model_fakultas->getAktifFakultas();           
-            // $this->data['jurusan'] = $this->model_jurusan->getAktifJurusan(); 
-            // $this->data['kelas'] = $this->model_kelas->getAktifKelas();          
-
-            // $mhs_data = $this->model_perceraian->getPerceraianData($id);
-            // $this->data['mhs_data'] = $mhs_data;
+            $pcri_data = $this->model_perceraianislam->getPerceraianislamData($id);
+			$this->data['pcri_data'] = $pcri_data;
             $this->render_template('perceraianislam/edit', $this->data); 
         }   
 	}

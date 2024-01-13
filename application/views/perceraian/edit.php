@@ -40,37 +40,37 @@
           
           <div class="form-group">
             <label for="nik_petugas">NIK Petugas</label>
-            <input type="text" class="form-control" id="nik_petugas" name="nik_petugas" placeholder="NIK Petugas" autocomplete="off" value="<?php echo $kmt_data['nik_petugas'] ?>">
+            <input type="text" class="form-control" id="nik_petugas" name="nik_petugas" placeholder="NIK Petugas" autocomplete="off" value="<?php echo $pcr_data['nik_petugas'] ?>">
             <?= form_error('nik_petugas', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="nama_petugas">Nama Petugas</label>
-            <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Nama Petugas" autocomplete="off" value="<?php echo $kmt_data['nama_petugas'] ?>">
+            <input type="text" class="form-control" id="nama_petugas" name="nama_petugas" placeholder="Nama Petugas" autocomplete="off" value="<?php echo $pcr_data['nama_petugas'] ?>">
             <?= form_error('nama_petugas', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="nik_suami">NIK Suami</label>
-            <input type="text" class="form-control" id="nik_suami" name="nik_suami" placeholder="NIK Suami" autocomplete="off" value="<?php echo $kmt_data['nik_suami'] ?>">
+            <input type="text" class="form-control" id="nik_suami" name="nik_suami" placeholder="NIK Suami" autocomplete="off" value="<?php echo $pcr_data['nik_suami'] ?>">
             <?= form_error('nik_suami', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="nama_suami">Nama Suami</label>
-            <input type="text" class="form-control" id="nama_suami" name="nama_suami" placeholder="Nama Suami" autocomplete="off" value="<?php echo $kmt_data['nama_suami'] ?>">
+            <input type="text" class="form-control" id="nama_suami" name="nama_suami" placeholder="Nama Suami" autocomplete="off" value="<?php echo $pcr_data['nama_suami'] ?>">
             <?= form_error('nama_suami', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="nik_Istri">NIK Istri</label>
-            <input type="text" class="form-control" id="nik_istri" name="nik_istri" placeholder="NIK Istri" autocomplete="off" value="<?php echo $kmt_data['nik_istri'] ?>">
+            <input type="text" class="form-control" id="nik_istri" name="nik_istri" placeholder="NIK Istri" autocomplete="off" value="<?php echo $pcr_data['nik_istri'] ?>">
             <?= form_error('nik_istri', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="nama_istri">Nama Istri</label>
-            <input type="text" class="form-control" id="nama_istri" name="nama_istri" placeholder="Nama Istri" autocomplete="off" value="<?php echo $kmt_data['nama_istri'] ?>">
+            <input type="text" class="form-control" id="nama_istri" name="nama_istri" placeholder="Nama Istri" autocomplete="off" value="<?php echo $pcr_data['nama_istri'] ?>">
             <?= form_error('nama_istri', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
@@ -78,11 +78,11 @@
             <label for="mengajukan">Mengajukan</label>
             <div class="radio">
               <label>
-                <input type="radio" name="mengajukan" id="Suami" value="1" <?php if ($kmt_data['mengajukan'] == '1') echo 'checked'; ?>>
+                <input type="radio" name="mengajukan" id="Suami" value="1" <?php if ($pcr_data['mengajukan'] == '1') echo 'checked'; ?>>
                 Suami
               </label>
               <label>
-                <input type="radio" name="mengajukan" id="Istri" value="2" <?php if ($kmt_data['mengajukan'] == '2') echo 'checked'; ?>>
+                <input type="radio" name="mengajukan" id="Istri" value="2" <?php if ($pcr_data['mengajukan'] == '2') echo 'checked'; ?>>
                 Istri
               </label>
             </div>
@@ -91,25 +91,25 @@
           <br>
           <div class="form-group">
             <label for="no_akta">No Akta</label>
-            <input type="text" class="form-control" id="no_akta" name="no_akta" placeholder="No Akta" autocomplete="off" value="<?php echo $kmt_data['no_akta'] ?>">
+            <input type="text" class="form-control" id="no_akta" name="no_akta" placeholder="No Akta" autocomplete="off" value="<?php echo $pcr_data['no_akta'] ?>">
             <?= form_error('no_akta', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="tanggal_akta">Tanggal Akta</label>
-            <input type="date" class="form-control" id="tanggal_akta" name="tanggal_akta" placeholder="Tanggal Akta" autocomplete="off" value="<?php echo $kmt_data['tanggal_akta'] ?>">
+            <input type="date" class="form-control" id="tanggal_akta" name="tanggal_akta" placeholder="Tanggal Akta" autocomplete="off" value="<?php echo $pcr_data['tanggal_akta'] ?>">
             <?= form_error('tanggal_akta', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="no_putusan">No Putusan</label>
-            <input type="text" class="form-control" id="no_putusan" name="no_putusan" placeholder="No Putusan" autocomplete="off" value="<?php echo $kmt_data['no_putusan'] ?>">
+            <input type="text" class="form-control" id="no_putusan" name="no_putusan" placeholder="No Putusan" autocomplete="off" value="<?php echo $pcr_data['no_putusan'] ?>">
             <?= form_error('no_putusan', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
           <div class="form-group">
             <label for="tanggal_putusan">Tanggal Putusan</label>
-            <input type="date" class="form-control" id="tanggal_putusan" name="tanggal_putusan" placeholder="Tanggal Putusan" autocomplete="off" value="<?php echo $kmt_data['tanggal_putusan'] ?>">
+            <input type="date" class="form-control" id="tanggal_putusan" name="tanggal_putusan" placeholder="Tanggal Putusan" autocomplete="off" value="<?php echo $pcr_data['tanggal_putusan'] ?>">
             <?= form_error('tanggal_putusan', '<medium class="text-danger">', '</medium>'); ?>
           </div>
           <br>
@@ -117,12 +117,12 @@
             <label for="sebab">Sebab</label>
             <select class="form-control" id="sebab" name="sebab">
               <option value="">Pilih Sebab</option>
-              <option <?php if ($kmt_data['sebab'] == 'PEMABUK/PEMADAT') echo 'selected'; ?> value="PEMABUK/PEMADAT">PEMABUK/PEMADAT</option>
-              <option <?php if ($kmt_data['sebab'] == 'BERBUAT ZINA') echo 'selected'; ?> value="BERBUAT ZINA">BERBUAT ZINA</option>
-              <option <?php if ($kmt_data['sebab'] == 'MENINGGALKAN PASANGAN LEBIH DARI 2 THN TANPA ALASAN') echo 'selected'; ?> value="MENINGGALKAN PASANGAN LEBIH DARI 2 THN TANPA ALASAN">MENINGGALKAN PASANGAN LEBIH DARI 2 THN TANPA ALASAN</option>
-              <option <?php if ($kmt_data['sebab'] == 'HUKUMAN PENJARA PENJARA DIATAS 5 THN/LEBIH BERAT') echo 'selected'; ?> value="HUKUMAN PENJARA PENJARA DIATAS 5 THN/LEBIH BERAT">HUKUMAN PENJARA PENJARA DIATAS 5 THN/LEBIH BERAT</option>
-              <option <?php if ($kmt_data['sebab'] == 'MELAKUKAN KEKEJAMAN/KEKERASAN DALAM RUMAH TANGGA') echo 'selected'; ?> value="MELAKUKAN KEKEJAMAN/KEKERASAN DALAM RUMAH TANGGA">MELAKUKAN KEKEJAMAN/KEKERASAN DALAM RUMAH TANGGA</option>
-              <option <?php if ($kmt_data['sebab'] == 'MENDAPAT CACAT BADAN/PENYAKIT') echo 'selected'; ?> value="MENDAPAT CACAT BADAN/PENYAKIT">MENDAPAT CACAT BADAN/PENYAKIT</option>
+              <option <?php if ($pcr_data['sebab'] == 'PEMABUK/PEMADAT') echo 'selected'; ?> value="PEMABUK/PEMADAT">PEMABUK/PEMADAT</option>
+              <option <?php if ($pcr_data['sebab'] == 'BERBUAT ZINA') echo 'selected'; ?> value="BERBUAT ZINA">BERBUAT ZINA</option>
+              <option <?php if ($pcr_data['sebab'] == 'MENINGGALKAN PASANGAN LEBIH DARI 2 THN TANPA ALASAN') echo 'selected'; ?> value="MENINGGALKAN PASANGAN LEBIH DARI 2 THN TANPA ALASAN">MENINGGALKAN PASANGAN LEBIH DARI 2 THN TANPA ALASAN</option>
+              <option <?php if ($pcr_data['sebab'] == 'HUKUMAN PENJARA PENJARA DIATAS 5 THN/LEBIH BERAT') echo 'selected'; ?> value="HUKUMAN PENJARA PENJARA DIATAS 5 THN/LEBIH BERAT">HUKUMAN PENJARA PENJARA DIATAS 5 THN/LEBIH BERAT</option>
+              <option <?php if ($pcr_data['sebab'] == 'MELAKUKAN KEKEJAMAN/KEKERASAN DALAM RUMAH TANGGA') echo 'selected'; ?> value="MELAKUKAN KEKEJAMAN/KEKERASAN DALAM RUMAH TANGGA">MELAKUKAN KEKEJAMAN/KEKERASAN DALAM RUMAH TANGGA</option>
+              <option <?php if ($pcr_data['sebab'] == 'MENDAPAT CACAT BADAN/PENYAKIT') echo 'selected'; ?> value="MENDAPAT CACAT BADAN/PENYAKIT">MENDAPAT CACAT BADAN/PENYAKIT</option>
             </select>
             <?= form_error('sebab', '<medium class="text-danger">', '</medium>'); ?>
           </div>
@@ -198,7 +198,7 @@
 
         <div class="box-footer">
           <button type="submit" class="btn btn-primary">Simpan</button>
-          <a href="<?php echo base_url('mahasiswa/') ?>" class="btn btn-warning">Kembali</a>
+          <a href="<?php echo base_url('perceraian/') ?>" class="btn btn-warning">Kembali</a>
         </div>
       </form>
     </div>

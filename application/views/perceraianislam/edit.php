@@ -39,91 +39,91 @@
                 
                 <div class="form-group">
                   <label for="nik_petugas">NIK Pria</label>
-                  <input type="text" class="form-control" id="nik_pria" name="nik_pria" placeholder="NIK Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="nik_pria" name="nik_pria" placeholder="NIK Pria" autocomplete="off" value="<?php echo $pcri_data['nik_pria'] ?>">
                    <?= form_error('nik_pria', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="nama_lengkap_pria">Nama Lengkap Pria</label>
-                  <input type="text" class="form-control" id="nama_lengkap_pria" name="nama_lengkap_pria" placeholder="Nama Lengkap Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="nama_lengkap_pria" name="nama_lengkap_pria" placeholder="Nama Lengkap Pria" autocomplete="off" value="<?php echo $pcri_data['nama_lengkap_pria'] ?>">
                   <?= form_error('nama_lengkap_pria', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="provinsi_pria">Provinsi Pria</label>
-                  <input type="text" class="form-control" id="provinsi_pria" name="provinsi_pria" placeholder="Provinsi Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="provinsi_pria" name="provinsi_pria" placeholder="Provinsi Pria" autocomplete="off" value="<?php echo $pcri_data['provinsi_pria'] ?>">
                   <?= form_error('provinsi_pria', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="kabupaten_pria">Kabupaten Pria</label>
-                  <input type="text" class="form-control" id="kabupaten_pria" name="kabupaten_pria" placeholder="Kabupaten Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="kabupaten_pria" name="kabupaten_pria" placeholder="Kabupaten Pria" autocomplete="off" value="<?php echo $pcri_data['kabupaten_pria'] ?>">
                   <?= form_error('kabupaten_pria', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="kecamatan_pria">Kecamatan Pria</label>
-                  <input type="text" class="form-control" id="kecamatan_pria" name="kecamatan_pria" placeholder="Kecamatan Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="kecamatan_pria" name="kecamatan_pria" placeholder="Kecamatan Pria" autocomplete="off" value="<?php echo $pcri_data['kecamatan_pria'] ?>">
                    <?= form_error('nkecamatan_pria', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="desa_pria">Desa Pria</label>
-                  <input type="text" class="form-control" id="desa_pria" name="desa_pria" placeholder="Desa Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="desa_pria" name="desa_pria" placeholder="Desa Pria" autocomplete="off" value="<?php echo $pcri_data['desa_pria'] ?>">
                   <?= form_error('desa_pria', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="nik_wanita">NIK Wanita</label>
-                  <input type="text" class="form-control" id="nik_wanita" name="nik_wanita" placeholder="NIK Wanita" autocomplete="off">
+                  <input type="text" class="form-control" id="nik_wanita" name="nik_wanita" placeholder="NIK Wanita" autocomplete="off" value="<?php echo $pcri_data['nik_wanita'] ?>">
                   <?= form_error('nik_wanita', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="nama_lengkap_wanita">Nama Lengkap Wanita</label>
-                  <input type="text" class="form-control" id="nama_lengkap_wanita" name="nama_lengkap_wanita" placeholder="Nama Lengkap Wanita" autocomplete="off">
+                  <input type="text" class="form-control" id="nama_lengkap_wanita" name="nama_lengkap_wanita" placeholder="Nama Lengkap Wanita" autocomplete="off" value="<?php echo $pcri_data['nama_lengkap_wanita'] ?>">
                   <?= form_error('nama_lengkap_wanita', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="provinsi_wanita">Provinsi Wanita</label>
-                  <input type="text" class="form-control" id="provinsi_wanita" name="provinsi_wanita" placeholder="Provinsi Wanita" autocomplete="off">
+                  <input type="text" class="form-control" id="provinsi_wanita" name="provinsi_wanita" placeholder="Provinsi Wanita" autocomplete="off" value="<?php echo $pcri_data['provinsi_wanita'] ?>">
                   <?= form_error('provinsi_wanita', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="kabupaten_wanita">Kabupaten Wanita</label>
-                  <input type="text" class="form-control" id="kabupaten_wanita" name="kabupaten_wanita" placeholder="Kabupaten Pria" autocomplete="off">
+                  <input type="text" class="form-control" id="kabupaten_wanita" name="kabupaten_wanita" placeholder="Kabupaten Wanita" autocomplete="off" value="<?php echo $pcri_data['kabupaten_wanita'] ?>">
                   <?= form_error('kabupaten_wanita', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="kecamatan_wanita">Kecamatan Wanita</label>
-                  <input type="text" class="form-control" id="kecamatan_wanita" name="kecamatan_wanita" placeholder="Kecamatan Wanita" autocomplete="off">
+                  <input type="text" class="form-control" id="kecamatan_wanita" name="kecamatan_wanita" placeholder="Kecamatan Wanita" autocomplete="off" value="<?php echo $pcri_data['kecamatan_wanita'] ?>">
                   <?= form_error('kecamatan_wanita', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="desa_wanita">Desa Wanita</label>
-                  <input type="text" class="form-control" id="desa_wanita" name="desa_wanita" placeholder="Desa Wanita" autocomplete="off">
+                  <input type="text" class="form-control" id="desa_wanita" name="desa_wanita" placeholder="Desa Wanita" autocomplete="off" value="<?php echo $pcri_data['desa_wanita'] ?>">
                   <?= form_error('desa_wanita', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="no_perceraianislam">No Perceraian Islam</label>
-                  <input type="text" class="form-control" id="no_perceraianislam" name="no_perceraianislam" placeholder="Perceraian Islam" autocomplete="off">
+                  <input type="text" class="form-control" id="no_perceraianislam" name="no_perceraianislam" placeholder="Perceraian Islam" autocomplete="off" value="<?php echo $pcri_data['no_perceraianislam'] ?>">
                   <?= form_error('no_perceraianislam', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="tanggal_perceraianislam">Tanggal Perceraian Islam</label>
-                  <input type="date" class="form-control" id="tanggal_perceraianislam" name="tanggal_perceraianislam" placeholder="Perceraian Islam" autocomplete="off">
+                  <input type="date" class="form-control" id="tanggal_perceraianislam" name="tanggal_perceraianislam" placeholder="Perceraian Islam" autocomplete="off" value="<?php echo $pcri_data['tanggal_perceraianislam'] ?>">
                   <?= form_error('tanggal_perceraianislam', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="alamat_baru">Alamat Baru</label>
-                  <input type="text" class="form-control" id="alamat_baru" name="alamat_baru" placeholder="Alamat Baru" autocomplete="off">
+                  <input type="text" class="form-control" id="alamat_baru" name="alamat_baru" placeholder="Alamat Baru" autocomplete="off" value="<?php echo $pcri_data['alamat_baru'] ?>">
                   <?= form_error('alamat_baru', '<medium class="text-danger">', '</medium>'); ?>
                 </div>
 

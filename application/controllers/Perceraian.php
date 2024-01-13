@@ -277,8 +277,8 @@ class Perceraian extends Admin_Controller
 		} else {
 
 			
-			$kmt_data = $this->model_perceraian->getPerceraianData($id);
-			$this->data['kmt_data'] = $kmt_data;
+			$pcr_data = $this->model_perceraian->getPerceraianData($id);
+			$this->data['pcr_data'] = $pcr_data;
 			$this->render_template('perceraian/edit', $this->data);
 		}
 	}
