@@ -222,7 +222,7 @@
                   <label for="formPelapor">Form</label>
                   <div class="kv-avatar">
                     <div class="file">
-                    <input id="formPelapor" name="formPelapor" type="file" required>
+                    <input id="formPelapor" name="formPelapor" type="file" required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                       <?= form_error('formPelapor', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
@@ -233,7 +233,7 @@
                   <label for="suratKet">Surat Keterangan</label>
                   <div class="kv-avatar">
                     <div class="file">
-                    <input id="suratKet" name="suratKet" type="file" required>
+                    <input id="suratKet" name="suratKet" type="file" required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                       <?= form_error('suratKet', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
@@ -244,7 +244,7 @@
                   <label for="KKjenazah">KK Jenazah</label>
                   <div class="kv-avatar">
                     <div class="file">
-                    <input id="KKjenazah" name="KKjenazah" type="file" required>
+                    <input id="KKjenazah" name="KKjenazah" type="file" required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                       <?= form_error('KKjenazah', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
@@ -255,7 +255,7 @@
                   <label for="KTPjenazah">KTP Jenazah</label>
                   <div class="kv-avatar">
                     <div class="file">
-                    <input id="KTPjenazah" name="KTPjenazah" type="file" required>
+                    <input id="KTPjenazah" name="KTPjenazah" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                       <?= form_error('KTPjenazah', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
@@ -266,7 +266,7 @@
                   <label for="KTPpelapor">KTP Pelapor</label>
                   <div class="kv-avatar">
                     <div class="file">
-                    <input id="KTPpelapor" name="KTPpelapor" type="file" required>
+                    <input id="KTPpelapor" name="KTPpelapor" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                       <?= form_error('KTPpelapor', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>
@@ -277,7 +277,7 @@
                   <label for="KTPsaksi">KTP Saksi</label>
                   <div class="kv-avatar">
                     <div class="file">
-                    <input id="KTPsaksi" name="KTPsaksi" type="file" required>
+                    <input id="KTPsaksi" name="KTPsaksi" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                       <?= form_error('KTPsaksi', '<span class="text-danger">', '</span>'); ?>
                     </div>
                   </div>

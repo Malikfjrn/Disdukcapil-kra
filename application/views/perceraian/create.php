@@ -183,7 +183,7 @@
                 <label for="form_permohonan">Form Permohonan</label>
                 <div class="kv-avatar">
                   <div class="file">
-                  <input id="form_permohonan" name="form_permohonan" type="file" required>
+                  <input id="form_permohonan" name="form_permohonan" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                     <?= form_error('form_permohonan', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
@@ -193,7 +193,7 @@
                 <label for="amar_putusan">Amar Putusan</label>
                 <div class="kv-avatar">
                   <div class="file">
-                  <input id="amar_putusan" name="amar_putusan" type="file" required>
+                  <input id="amar_putusan" name="amar_putusan" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                     <?= form_error('amar_putusan', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
@@ -203,7 +203,7 @@
                 <label for="akta_kawin">Akta Kawin</label>
                 <div class="kv-avatar">
                   <div class="file">
-                  <input id="akta_kawin" name="akta_kawin" type="file" required>
+                  <input id="akta_kawin" name="akta_kawin" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                     <?= form_error('akta_kawin', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
@@ -213,7 +213,7 @@
                 <label for="kk">Kartu Keluarga</label>
                 <div class="kv-avatar">
                   <div class="file">
-                  <input id="kk" name="kk" type="file" required>
+                  <input id="kk" name="kk" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                     <?= form_error('kk', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
@@ -223,7 +223,7 @@
                 <label for="ktp">Foto KTP</label>
                 <div class="kv-avatar">
                   <div class="file">
-                  <input id="ktp" name="ktp" type="file" required>
+                  <input id="ktp" name="ktp" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                     <?= form_error('ktp', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
@@ -233,7 +233,7 @@
                 <label for="form_pindah">Form Pindah</label>
                 <div class="kv-avatar">
                   <div class="file">
-                  <input id="form_pindah" name="form_pindah" type="file" required>
+                  <input id="form_pindah" name="form_pindah" type="file"  required oninvalid="this.setCustomValidity('Upload file harus diisi')" oninput="this.setCustomValidity('')">
                     <?= form_error('form_pindah', '<span class="text-danger">', '</span>'); ?>
                   </div>
                 </div>
