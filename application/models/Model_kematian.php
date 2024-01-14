@@ -67,7 +67,7 @@ class Model_kematian extends CI_Model
 		$sql = "SELECT MONTH(tanggalKematian) as bulan, COUNT(*) as total_kematian
 				FROM kematian 
 				WHERE YEAR(tanggalKematian) = ?
-				GROUP BY bulan";
+				GROUP BY MONTH(tanggalKematian)";
 	
 		$query = $this->db->query($sql, array($currentYear));
 		return $query->result_array();
@@ -76,73 +76,68 @@ class Model_kematian extends CI_Model
 	
 
 	public function getBulanLabels()
-	{	
-		$currentYear = date('Y'); 
+{
+    $currentYear = date('Y'); 
 
-		$this->db->select('DISTINCT YEAR(tanggalKematian) as tahun, MONTH(tanggalKematian) as bulan', false);
-		$this->db->from('kematian');
-		$this->db->where('YEAR(tanggalKematian)', $currentYear); 
-		$query = $this->db->get();
-		$result = $query->result_array();
+    $this->db->select('DISTINCT MONTH(tanggalKematian) as bulan', false);
+    $this->db->from('kematian');
+    $this->db->where('YEAR(tanggalKematian)', $currentYear); 
+    $query = $this->db->get();
+    $result = $query->result_array();
+
+    $labels = array_map(function ($item) use ($currentYear) {
+        $nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
+        return ['tahun' => $currentYear, 'bulan' => $nama_bulan];
+    }, $result);
+
+    return $labels;
+}
+
+public function getDatasetsForPackages()
+{
+    $this->db->select('sebab, COUNT(*) as jumlah_kematian');
+    $this->db->from('kematian');
+    $this->db->where('YEAR(tanggalKematian)', date('Y'));
+    $this->db->group_by('sebab');
+    $this->db->order_by('sebab', 'ASC');
+    $query = $this->db->get();
+    $result = $query->result_array();
+
+    $datasets = array_map(function($item) {
+        return [
+            'label' => $item['sebab'],
+            'data' => $this->getJumlahKematianPerBulan($item['sebab']),
+            'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
+            'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
+            'borderWidth' => 1
+        ];
+    }, $result);
+
+    return $datasets;
+}
+
 	
-		$labels = array_map(function ($item)  use ($currentYear) {
-			
-			$nama_bulan = date('F', mktime(0, 0, 0, $item['bulan'], 1));
-			return ['tahun' => $item['tahun'], 'bulan' => $nama_bulan];
-		}, $result);
-	
-		return $labels;
-	}
-	  
-	
-	
-	
-	
-	
-		public function getDatasetsForPackages()
-		{
-			$this->db->select('sebab, COUNT(*) as jumlah_kelmatian');
-			$this->db->from('kematian');
-			$this->db->where('YEAR(tanggalKematian)', date('Y'));
-			$this->db->group_by('sebab');
-			$this->db->order_by('sebab', 'ASC');
-			$query = $this->db->get();
-			$result = $query->result_array();
-	
-			$datasets = array_map(function($item) {
-				return [
-					'label' => $item['sebab'],
-					'data' => $this->getJumlahKematianPerBulan($item['sebab']),
-					'backgroundColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',0.2)',
-					'borderColor' => 'rgba('.rand(0,255).','.rand(0,255).','.rand(0,255).',1)',
-					'borderWidth' => 1
-				];
-			}, $result);
-	
-			return $datasets;
-		}
-	
-		public function getJumlahKematianPerBulan($sebab)
-	{
-		$this->db->select('MONTH(sebab) as bulan, COUNT(*) as jumlah_kelmatian');
-		$this->db->from('kematian');
-		$this->db->where('sebab', $sebab);
-		$this->db->group_by('bulan');
-		$query = $this->db->get();
-		$result = $query->result_array();
-	
-		
-		$jumlah_kelmatian = array_fill(1, 12, 0);
-	
-		
-		foreach ($result as $item) {
-			$bulan = $item['bulan'];
-			$jumlah_kelmatian[$bulan] = $item['jumlah_kelmatian'];
-		}
-	
-		log_message('debug', 'Jumlah Pesanan Per Bulan (' . $sebab . '): ' . print_r($jumlah_kelmatian, true));
-	
-		return $jumlah_kelmatian;
-	}
+public function getJumlahKematianPerBulan($sebab)
+{
+    $this->db->select('MONTH(tanggalKematian) as bulan, COUNT(*) as jumlah_kematian');
+    $this->db->from('kematian');
+    $this->db->where('sebab', $sebab);
+    $this->db->where('YEAR(tanggalKematian)', date('Y')); 
+    $this->db->group_by('bulan');
+    $query = $this->db->get();
+    $result = $query->result_array();
+
+    $jumlah_kematian = array_fill(1, 12, 0);
+
+    foreach ($result as $item) {
+        $bulan = $item['bulan'];
+        $jumlah_kematian[$bulan] = $item['jumlah_kematian'];
+    }
+
+    log_message('debug', 'Jumlah Kematian Per Bulan (' . $sebab . '): ' . print_r($jumlah_kematian, true));
+
+    return $jumlah_kematian;
+}
+
 }
 

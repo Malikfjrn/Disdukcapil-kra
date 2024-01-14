@@ -95,6 +95,12 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="namaPelapor">Nama Pelapor</label>
+                  <input type="text" class="form-control" id="namaPelapor" name="namaPelapor" placeholder="Nama Pelapor" autocomplete="off" value="<?= set_value('namaPelapor', isset($saved_data['namaPelapor']) ? $saved_data['namaPelapor'] : '')?>">
+                  <?= form_error('namaPelapor', '<medium class="text-danger">', '</medium>'); ?>
+                </div>
+
+                <div class="form-group">
                   <label for="nikPelapor">NIK Pelapor</label>
                   <input type="text" class="form-control" id="nikPelapor" name="nikPelapor" placeholder="NIK Pelapor" autocomplete="off" value="<?= set_value('nikPelapor', isset($saved_data['nikPelapor']) ? $saved_data['nikPelapor'] : '')?>">
                   <?= form_error('nikPelapor', '<medium class="text-danger">', '</medium>'); ?>
@@ -156,3 +162,4 @@
     
   });
 </script>
+
