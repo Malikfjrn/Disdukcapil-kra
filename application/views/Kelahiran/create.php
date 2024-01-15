@@ -188,7 +188,7 @@
                     Laki-laki
                   </label>
                   <label>
-                    <input type="radio" name="jenisKelamin" id="perempuan" value="laki-laki">
+                    <input type="radio" name="jenisKelamin" id="perempuan" value="perempuan">
                     Perempuan
                   </label>
                 </div>

@@ -129,11 +129,11 @@
                 <label for="mengajukan">Mengajukan</label>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="mengajukan" id="Suami" value="1">
+                    <input type="radio" name="mengajukan" id="Suami" value="Suami">
                     Suami
                   </label>
                   <label>
-                    <input type="radio" name="mengajukan" id="Istri" value="2">
+                    <input type="radio" name="mengajukan" id="Istri" value="Istri">
                     Istri
                   </label>
                 </div>
