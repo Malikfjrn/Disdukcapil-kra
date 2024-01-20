@@ -1,3 +1,11 @@
+<head>
+<style>
+  mark {
+    background-color: #3498db; /* Warna biru untuk highlight */
+    color: white; /* Warna teks putih untuk kontras */
+  }
+</style>
+</head>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -105,17 +113,52 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#pensiunTable').DataTable({
-        'order' : [],
-        });
-
-      $("#pensiunMainNav").addClass('active');
-      $("#managePensiunSubNav").addClass('active');
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.24/features/searchHighlight/dataTables.searchHighlight.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var table = $('#pensiunTable').DataTable({
+      'order': []
     });
-  </script>
+
+    $("#pensiunMainNav").addClass('active');
+    $("#managePensiunSubNav").addClass('active');
+
+    // Event untuk memperbarui highlight saat pencarian berubah
+    table.on('draw.dt', function() {
+      updateHighlight();
+    });
+
+    // Event untuk memperbarui highlight saat pencarian berubah (di dalam kotak pencarian)
+    $('.dataTables_filter input').on('input', function() {
+      table.search(this.value).draw();
+      updateHighlight();
+    });
+
+    function updateHighlight() {
+      // Hapus tag <mark> dari seluruh sel
+      table.cells().nodes().to$().find('mark').contents().unwrap();
+
+      // Dapatkan kata kunci pencarian
+      var searchTerm = table.search();
+
+      // Jika pencarian tidak kosong, tambahkan tag <mark> ke teks yang mengandung kata kunci pencarian
+      if (searchTerm !== '') {
+        table.cells(':visible').every(function() {
+          var cellText = $(this.node()).text();
+          if (cellText.toLowerCase().includes(searchTerm.toLowerCase())) {
+            var markedText = cellText.replace(new RegExp(searchTerm, 'gi'), function(match) {
+              return '<mark>' + match + '</mark>';
+            });
+            $(this.node()).html(markedText);
+          }
+        });
+      }
+    }
+  });
+</script>
   <script>
   function confirmDelete(itemId) {
       var confirmDelete = confirm("Apakah Anda yakin ingin menghapus?");

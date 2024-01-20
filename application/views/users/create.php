@@ -155,8 +155,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#groups").select2();
-
+  
     $("#userMainNav").addClass('active');
     $("#createUserSubNav").addClass('active');
     

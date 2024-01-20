@@ -79,3 +79,11 @@
 
         });
     </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      
+
+      $("#grafikMainNav").addClass('active');
+      $("#viewGrafikSubNav").addClass('active');
+    });
+  </script>

@@ -29,7 +29,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('Kelahiran/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('grafik/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('Kematian/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('grafik/grafik1') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -59,7 +59,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('Nikah/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('grafik/grafik2') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -74,7 +74,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('Pensiun/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('grafik/grafik5') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -90,7 +90,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('Perceraian/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('grafik/grafik3') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -105,7 +105,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('Perceraianislam/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('grafik/grafik4') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 

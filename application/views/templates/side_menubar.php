@@ -23,22 +23,22 @@
             </a>
             <ul class="treeview-menu">
               <?php if (in_array('viewGrafik', $user_permission)) : ?>
-                <li id="createGrafikSubMenu"><a href="<?php echo base_url('grafik/') ?>"><i class="fa fa-circle-o"></i> Grafik Kelahiran</a></li>
+                <li id="viewGrafikSubNav"><a href="<?php echo base_url('grafik/') ?>"><i class="fa fa-circle-o"></i> Grafik Kelahiran</a></li>
               <?php endif; ?>
               <?php if (in_array('viewGrafik', $user_permission)) : ?>
-                <li id="createGrafikSubMenu"><a href="<?php echo base_url('grafik/grafik1') ?>"><i class="fa fa-circle-o"></i> Grafik Kematian</a></li>
+                <li id="viewGrafikSubNav"><a href="<?php echo base_url('grafik/grafik1') ?>"><i class="fa fa-circle-o"></i> Grafik Kematian</a></li>
               <?php endif; ?>
               <?php if (in_array('viewGrafik', $user_permission)) : ?>
-                <li id="createGrafikSubMenu"><a href="<?php echo base_url('grafik/grafik2') ?>"><i class="fa fa-circle-o"></i> Grafik Nikah</a></li>
+                <li id="viewGrafikSubNav"><a href="<?php echo base_url('grafik/grafik2') ?>"><i class="fa fa-circle-o"></i> Grafik Nikah</a></li>
               <?php endif; ?>
               <?php if (in_array('viewGrafik', $user_permission)) : ?>
-                <li id="createGrafikSubMenu"><a href="<?php echo base_url('grafik/grafik3') ?>"><i class="fa fa-circle-o"></i> Grafik Perceraian</a></li>
+                <li id="viewGrafikSubNav"><a href="<?php echo base_url('grafik/grafik3') ?>"><i class="fa fa-circle-o"></i> Grafik Perceraian</a></li>
               <?php endif; ?>
               <?php if (in_array('viewGrafik', $user_permission)) : ?>
-                <li id="createGrafikSubMenu"><a href="<?php echo base_url('grafik/grafik4') ?>"><i class="fa fa-circle-o"></i> Grafik Perceraian Islam</a></li>
+                <li id="viewGrafikSubNav"><a href="<?php echo base_url('grafik/grafik4') ?>"><i class="fa fa-circle-o"></i> Grafik Perceraian Islam</a></li>
               <?php endif; ?>
               <?php if (in_array('viewGrafik', $user_permission)) : ?>
-                <li id="createGrafikSubMenu"><a href="<?php echo base_url('grafik/grafik5') ?>"><i class="fa fa-circle-o"></i> Grafik Pensiun</a></li>
+                <li id="viewGrafikSubNav"><a href="<?php echo base_url('grafik/grafik5') ?>"><i class="fa fa-circle-o"></i> Grafik Pensiun</a></li>
               <?php endif; ?>
             </ul>
           </li>
