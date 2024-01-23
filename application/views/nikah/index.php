@@ -184,6 +184,7 @@
     }
   });
 </script>
+<script>
       function confirmDelete(itemId) {
           var confirmDelete = confirm("Apakah Anda yakin ingin menghapus?");
 

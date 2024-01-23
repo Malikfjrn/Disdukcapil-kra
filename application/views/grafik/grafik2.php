@@ -84,6 +84,6 @@
       
 
       $("#grafikMainNav").addClass('active');
-      $("#viewGrafikSubNav").addClass('active');
+      $("#view2GrafikSubNav").addClass('active');
     });
   </script>
