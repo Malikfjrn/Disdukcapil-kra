@@ -109,7 +109,7 @@
                 <li id="createGroupSubMenu"><a href="<?php echo base_url('groups/create') ?>"><i class="fa fa-circle-o"></i> Tambah Group</a></li>
               <?php endif; ?>
               <?php if (in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)) : ?>
-                <li id="manageGroupSubMenu"><a href="<?php echo base_url('groups') ?>"><i class="fa fa-circle-o"></i> Kelola Group</a></li>
+                <li id="manageGroupSubNav"><a href="<?php echo base_url('groups') ?>"><i class="fa fa-circle-o"></i> Kelola Group</a></li>
               <?php endif; ?>
             </ul>
           </li>
