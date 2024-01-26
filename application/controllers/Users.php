@@ -52,7 +52,7 @@ class Users extends Admin_Controller
 		$this->form_validation->set_rules('cpassword', 'Confirm password', 'trim|required|matches[password]');
 		$this->form_validation->set_rules('fname', 'First name', 'trim|required');
 		$this->form_validation->set_rules('lname', 'Last name', 'trim|required');
-		$this->form_validation->set_rules('phone', 'No Hp', 'trim|required');
+		$this->form_validation->set_rules('phone', 'No Hp', 'trim|required|regex_match[/^[0-9]+$/]');
 		$this->form_validation->set_rules('namaPelapor', 'Nama Pelapor', 'trim|required');
 		$this->form_validation->set_rules('nikPelapor', 'NIK Pelapor', 'trim|required');
 		$this->form_validation->set_rules('alamatPelapor', 'Alamat Pelapor', 'trim|required');
