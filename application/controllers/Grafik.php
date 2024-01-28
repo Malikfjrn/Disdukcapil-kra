@@ -35,9 +35,6 @@ class Grafik extends Admin_Controller
     
     }
 
-    
-    
-
     public function grafik1()
     {   
         if (!in_array('viewGrafik', $this->permission)) {
@@ -58,7 +55,7 @@ class Grafik extends Admin_Controller
     {   if (!in_array('viewGrafik', $this->permission)) {
         redirect('dashboard', 'refresh');
     }
-        $tahun = date('Y'); // or you can set the desired year
+        $tahun = date('Y'); 
         $this->data['totalData'] = $this->Model_nikah->getTotalDataPerMonthInYear($tahun);
         $this->data['labels'] = $this->Model_nikah->getBulanLabels($tahun);
         $this->data['total_nikah'] = $this->Model_nikah->countTotalNikahPertahun();
@@ -88,7 +85,7 @@ class Grafik extends Admin_Controller
     {   if (!in_array('viewGrafik', $this->permission)) {
         redirect('dashboard', 'refresh');
     }
-        $tahun = date('Y'); // or you can set the desired year
+        $tahun = date('Y'); 
         $this->data['totalData'] = $this->Model_perceraianislam->getTotalDataPerMonthInYear($tahun);
         $this->data['labels'] = $this->Model_perceraianislam->getBulanLabels($tahun);
         $this->data['total_perceraianislam'] = $this->Model_perceraianislam->countTotalPerceraianislamPertahun();
@@ -101,7 +98,7 @@ class Grafik extends Admin_Controller
     {   if (!in_array('viewGrafik', $this->permission)) {
         redirect('dashboard', 'refresh');
     }
-        $tahun = date('Y'); // or you can set the desired year
+        $tahun = date('Y'); 
         $this->data['totalData'] = $this->Model_pensiun->getTotalDataPerMonthInYear($tahun);
         $this->data['labels'] = $this->Model_pensiun->getBulanLabels($tahun);
         $this->data['total_pensiun'] = $this->Model_pensiun->countTotalPensiunPertahun();
