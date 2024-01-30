@@ -33,7 +33,7 @@
           <?php endif; ?>
           <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Edit Data Pelapor</h3>
+            <h3 class="box-title">Edit Data Perceraian</h3>
           </div>
           <form role="form" action="<?php base_url('perceraian/edit') ?>" method="post" enctype="multipart/form-data">
             <div class="box-body">
